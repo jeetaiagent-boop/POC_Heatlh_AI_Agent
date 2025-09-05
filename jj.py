@@ -8,6 +8,7 @@ from io import BytesIO
 
 # Load spaCy NER
 try:
+    spacy.cli.download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 except OSError:
     st.error("Please install the spaCy English model: 'python -m spacy download en_core_web_sm'")
@@ -413,4 +414,5 @@ def main():
             """)
 
 if __name__ == "__main__":
+
     main()
